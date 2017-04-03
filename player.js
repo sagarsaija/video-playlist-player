@@ -1,6 +1,5 @@
 var video_player = function() {
   var video_playlist = [];
-  var curr_video = 0;
 
   function play_video(index) {
     var iframe = $('#video-player')[0];
@@ -50,15 +49,10 @@ var video_player = function() {
           };
           video_playlist.push(video_info);
         }
-      };
-           
+      };   
       play_video(0);
-      for(var index = 0; index < video_playlist.length; index++) {
-        console.log(video_playlist[index]);
-      }
   }
 
-  //AJAX calling API for riipen.mediacore.tv
   function start_videos() {
     $.ajax({
     method:'GET',
