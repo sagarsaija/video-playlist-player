@@ -9,19 +9,18 @@
     <link rel="stylesheet" href="stylesheet.css"/>
   </head>
   <body>
-    <div id="video_player">
-      <div class="title"></div>
-      <iframe id="video-player" webkitallowfullscreen="webkitallowfullscreen" height="480" width="80%"
-            allowfullscreen="allowfullscreen"  mozallowfullscreen="mozallowfullscreen" frameborder="0"></iframe>
-      <div id="controls">
-        <button id="back_button">Back</button>
-        <button id="skip_button">Skip</button>
+    <iframe id="video-player" webkitallowfullscreen="webkitallowfullscreen" height="480" width="80%"
+          allowfullscreen="allowfullscreen"  mozallowfullscreen="mozallowfullscreen" frameborder="0"></iframe>
+    <div id="nav-bar">
+      <div id="back-container" class="navbar">
+        <button id="back_button" title="Back">&#8678;</button>
       </div>
-      <div id="video_info">
-        <div class="title"></div>
-        <div id="description"></div>
+      <div id="skip-container" class="navbar">
+        <button id="skip_button" title="Skip">&#8680;</button>
       </div>
-    </div>
-    
+      <br>
+      <div id="title"></div>
+      <div id="description"></div>  
+      </div>
   </body>
 </html>

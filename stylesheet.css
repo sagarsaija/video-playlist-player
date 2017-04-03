@@ -1,0 +1,55 @@
+body {
+  margin-left: 40px;
+  color: #4C5863;
+  font-family: 'Helvetica Neue', Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;
+}
+
+button {
+  border: none;
+  background: none;
+  font-size: 80px;
+  outline: none;
+  padding: 0;
+  height: 90px;
+  width: 90px;
+  color: #4C5863;
+}
+
+/* visual indication when button is clicked */
+button:active {
+  box-shadow: 0 2px 0 inset;
+  background: #4C5863;
+  border-radius: 20%;
+  color: white;
+}
+
+#title {
+  font-size: 40px;
+}
+
+#video-player {
+  padding-top: 10px;
+  height: 480px;
+  width: 80%;
+}
+
+#nav-bar {
+  width: 80%;
+  padding-top: 10px;
+  height: 90px;
+  text-align: center;
+}
+
+.navbar {
+  display: inline;
+}
+
+#back-container {
+  float: left;
+  margin-right: 10px;
+}
+
+#skip-container {
+  float: right;
+  margin-left: 10px;
+}
