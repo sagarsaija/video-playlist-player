@@ -2,7 +2,7 @@
 
 $(document).ready(function() {
 
-  var video_playlist = []
+  var video_playlist = [];
   var curr_video = 0;
 
   $.ajax({
@@ -12,10 +12,22 @@ $(document).ready(function() {
     username: "riipenchallenge@mediacore.com", 
     password: "riipenchallenge",
     crossDomain: true,
-    success: function (videos) {  
-      video_playlist.push(videos.items);
-      console.log(video_playlist);
-      console.log(videos);
-    }
+
+    success: function(videos) {
+      $.each(videos.items, function(key, video){
+        if (video.type === "video"){
+          var video_info = {
+            id : video.id,
+            title : video.title,
+            description : video.description_plain,
+          };
+          video_playlist.push(video_info);
+        }
+        console.log(video_playlist);
+      });
+    },
+    failure: function (issue) {
+        alert(issue + " error occured");
+    },
   });
 });
