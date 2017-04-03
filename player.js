@@ -3,9 +3,6 @@ var video_player = function() {
   var curr_video = 0;
 
   function play_video(index) {
-    //console.log(video_playlist[index]);
-
-    //$('#video-player')[0].src = "https://riipen.mediacore.tv/media/id:" + video_playlist[index].id + "/embed_player?iframe=True"
     var iframe = $('#video-player')[0];
     iframe.src = "https://riipen.mediacore.tv/media/id:" + video_playlist[index].id + "/embed_player";
     $('#title').html(video_playlist[index].title);
@@ -22,6 +19,23 @@ var video_player = function() {
         index = 0;
       }
         play_video(index);
+    });
+
+    $('#skip_button').on('click', function(){
+      index++;
+      if (index >= video_playlist.length) {
+        index = 0;
+      }
+      play_video(index);
+    });
+
+    $('#back_button').on('click', function(){
+      var last_video = (video_playlist.length) -1;
+      index--;
+      if (index < 0) {
+        index = last_video;
+      }
+      play_video(index);
     });
   }
 
@@ -66,5 +80,5 @@ var video_player = function() {
 }();
 
 $(document).ready(function() {
-  video_player.start();
+  video_player.start(); 
 });
